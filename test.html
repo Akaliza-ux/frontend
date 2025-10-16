@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Validation Tests</title>
+  <script type="module">
+    import { validate, patterns } from './scripts/validators.js';
+    console.log('Validation Tests:');
+    console.log(validate('Lunch', '12.50', '2025-10-10', 'Food'));
+    console.log('Duplicate test:', patterns.duplicateWord.test('coffee coffee'));
+  </script>
+</head>
+<body>
+  <h1>Validation Console Tests</h1>
+  <p>Open the browser console to see validation results.</p>
+</body>
+</html>

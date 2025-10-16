@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Finance Tracker</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎓 Student Finance Tracker</h1>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#records">Records</a>
+      <a href="#add">Add Transaction</a>
+      <a href="#settings">Settings</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- DASHBOARD -->
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="stats">
+        <div>Total Records: <span id="stat-total">0</span></div>
+        <div>Total Spent: $<span id="stat-sum">0.00</span></div>
+        <div>Top Category: <span id="stat-top">-</span></div>
+        <div id="cap-status" aria-live="polite"></div>
+      </div>
+      <canvas id="trend-chart" width="300" height="100"></canvas>
+    </section>
+
+    <!-- RECORDS -->
+    <section id="records">
+      <h2>Transactions</h2>
+      <div class="controls">
+        <input id="search" placeholder="Regex search (e.g. coffee|tea)" />
+        <button id="sort-date">Sort by Date</button>
+        <button id="sort-amount">Sort by Amount</button>
+      </div>
+      <table id="records-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Amount ($)</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- ADD/EDIT FORM -->
+    <section id="add">
+      <h2>Add / Edit Transaction</h2>
+      <form id="record-form">
+        <label>Description:
+          <input id="desc" required />
+        </label>
+        <label>Amount ($):
+          <input id="amount" required type="number" step="0.01" />
+        </label>
+        <label>Category:
+          <select id="category">
+            <option>Food</option>
+            <option>Books</option>
+            <option>Transport</option>
+            <option>Entertainment</option>
+            <option>Fees</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Date:
+          <input id="date" type="date" required />
+        </label>
+        <button type="submit">Save</button>
+        <p id="form-error" role="alert"></p>
+      </form>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings">
+      <h2>Settings</h2>
+      <label>Cap/Limit ($): <input id="cap" type="number" step="0.01" /></label>
+      <button id="export-json">Export JSON</button>
+      <input type="file" id="import-json" accept=".json" />
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2>About</h2>
+      <p>This Student Finance Tracker helps students manage budgets and transactions.</p>
+      <p>Created by <strong>Akaliza</strong> — <a href="https://github.com/Akaliza-ux" target="_blank">GitHub</a></p>
+      <p>Contact: <a href="mailto:akaliza@example.com">akaliza@example.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Student Finance Tracker</p>
+  </footer>
+
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

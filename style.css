@@ -1,0 +1,66 @@
+:root {
+  --bg: #f9f9f9;
+  --text: #222;
+  --primary: #2a8;
+  --accent: #38c;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+header, footer {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+input, select, button {
+  margin: 0.25rem 0;
+  padding: 0.4rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+mark {
+  background: yellow;
+}
+
+@media (min-width: 768px) {
+  nav { display: flex; justify-content: center; }
+}
+
+@media (min-width: 1024px) {
+  main { max-width: 900px; margin: auto; }
+}
